@@ -140,29 +140,7 @@ Disadvantages:
   ✗ Slightly lower mean Acc@1.0 and Acc@2.0
 
 --------------------------------------------------------------------------------
-5. Selection Criteria Guide
---------------------------------------------------------------------------------
-
-Consider w_demo in the following situations:
-
-  [ ] Perfect accuracy is critical (Acc@0.5 = 1.0 is essential)
-  [ ] Best model performance is more important than average
-  [ ] MAE must be minimized
-  [ ] Demographic data collection is feasible
-  [ ] Privacy concerns are not an issue
-  [ ] All accuracy metrics must be perfect
-
-Consider wo_demo in the following situations:
-
-  [ ] Model explanation (R²) is important
-  [ ] Average performance is important
-  [ ] Practical deployment is important (difficult demographic data collection)
-  [ ] Privacy regulations are strict
-  [ ] Deployment simplification is needed
-  [ ] Model generalization is important
-
---------------------------------------------------------------------------------
-6. Additional Considerations
+5. Additional Considerations
 --------------------------------------------------------------------------------
 
 Research Purpose:
@@ -176,17 +154,3 @@ Practicality:
 Accuracy Requirements:
   • If Acc@0.5 = 1.0 is essential → w_demo
   • If slight error is acceptable → wo_demo
-
---------------------------------------------------------------------------------
-7. Conclusion and Questions
---------------------------------------------------------------------------------
-
-Both models have advantages and disadvantages, and the choice depends on 
-research purpose and practical requirements.
-
-Questions:
-  1. Which model would you like to select? (w_demo / wo_demo)
-  2. What is your reason for the selection?
-  3. Are there any additional considerations?
-
-================================================================================
