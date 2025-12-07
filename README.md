@@ -46,10 +46,24 @@ pip install -r requirements.txt
 프로젝트는 두 가지 데이터셋을 사용합니다:
 
 - **Single-modal dataset**: `singlemodal_dataset/` 디렉토리
-  - Nail 이미지 및 메타데이터
-  - Conjunctiva 이미지 및 메타데이터
+  - **Nail 데이터셋**: 
+    - 이름: Machine vision model using nail images for non-invasive detection of iron deficiency anemia in university students (Whole hand images)
+    - 크기: 823 images (823명)
+    - 분할: Train : Val : Test = 8 : 1 : 1 (Patient-wise split)
+    - CSV 파일: `nail_meta_1.csv` (실제 사용 파일)
+    - 필요 컬럼: `image_path`, `hb_value`, `patient_id`
+  - **Conjunctiva 데이터셋**:
+    - Folder 1: conjunctiva images for Anemia (800장, 200명)
+    - Folder 2: CP-Anemic Dataset (710장, 710명)
+    - Hb 범위: 8–16 g/dL 필터링
+    - CSV 파일: `conj_folder1.csv`, `conj_folder2.csv`
+    - 필요 컬럼: `image_path`, `hb_value`, `patient_id`
 - **Multimodal dataset**: `multimodal_dataset/` 디렉토리
-  - Fusion 학습용 paired 이미지 및 메타데이터
+  - 이름: ImageHB (같은 환자의 Nail + Conj 이미지)
+  - 구성: 26명 환자, 각 환자당 4개 paired view (Left/Right Nail, Left/Right Conj)
+  - 총 104 image pairs (= 26명 × 4 pairs)
+  - CSV 파일: `fusion_meta.csv`
+  - 필요 컬럼: `nail_image_path`, `conj_image_path`, `hb_value`, `patient_id`, `side`, `age`, `gender`
 
 **경로 설정 가이드:**
 
@@ -191,7 +205,7 @@ python main.py --mode ensemble --config config/ensemble_w_demo.yaml
 ### Dataset
 
 - 이름: **Skin and Fingernails Dataset (Whole hand images)**
-- 크기: **250 images (250명)**
+- 크기: **823 images (823명)**
 - 분할: **Train : Val : Test = 8 : 1 : 1**
 - **Patient-wise split** (같은 사람의 이미지는 하나의 split에만 존재)
 
@@ -201,7 +215,7 @@ python main.py --mode ensemble --config config/ensemble_w_demo.yaml
   - `load_nail_metadata(csv_path)` : CSV 를 읽어 `image_path, hb_value, patient_id` 를 로드
   - `split_nail_by_patient(...)` : 8:1:1 patient-wise split
 - CSV 예시 위치:  
-  `singlemodal_dataset/nail_meta.csv`
+  `singlemodal_dataset/nail_meta_1.csv` (실제 사용 파일)
 
 필요 컬럼:
 
