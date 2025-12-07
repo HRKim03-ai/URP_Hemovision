@@ -1,0 +1,39 @@
+seed: 42
+log_file: logs/fusion_phase1_test.log
+
+# Fusion metadata CSV path (프로젝트 루트 기준 상대 경로)
+fusion_metadata_csv: multimodal_dataset/fusion_meta.csv
+
+# Nail backbone names (test용으로 1개만)
+nail_backbones:
+  - timm/convnext_base.clip_laion2b_augreg_ft_in12k
+
+# Conj backbone names (test용으로 1개만)
+conj_backbones:
+  - timm/convnext_base.clip_laion2b_augreg_ft_in12k
+
+# Checkpoint directories for loading pretrained backbones
+nail_checkpoint_dir: checkpoints/nail
+conj_checkpoint_dir: checkpoints/conj
+
+# Whether to load pretrained backbones from single-modality checkpoints
+load_pretrained_backbones: true
+
+# Whether to use demographic features (age_z, gender_binary) in fusion
+use_demographics: true
+
+# If true, will run both versions (with and without demographics) sequentially
+run_both_demo_versions: false
+
+image_size: 224
+batch_size: 8
+num_workers: 4
+
+# Phase 1 training settings - TEST: 1 epoch only
+epochs: 1
+warmup_epochs_head: 5  # Epoch 0-5: LR_head warmup
+
+weight_decay: 1e-4
+
+checkpoint_dir: checkpoints/fusion_phase1_test
+

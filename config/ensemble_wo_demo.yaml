@@ -1,0 +1,19 @@
+log_file: logs/ensemble_wo_demo.log
+models:
+- name: p1_fold0_nail-timm_convnext_small.in12k_conj-timm_convnext_small.in12k_wo_demo
+  test_pred_path: ensemble_predictions/p1_fold0_nail-timm_convnext_small.in12k_conj-timm_convnext_small.in12k_wo_demo_test_preds.npy
+  val_pred_path: ensemble_predictions/p1_fold0_nail-timm_convnext_small.in12k_conj-timm_convnext_small.in12k_wo_demo_val_preds.npy
+  weight_range:
+  - 0.0
+  - 1.0
+- name: p2_fold0_nail-timm_convnext_small.in12k_conj-timm_convnext_small.in12k_wo_demo
+  test_pred_path: ensemble_predictions/p2_fold0_nail-timm_convnext_small.in12k_conj-timm_convnext_small.in12k_wo_demo_test_preds.npy
+  val_pred_path: ensemble_predictions/p2_fold0_nail-timm_convnext_small.in12k_conj-timm_convnext_small.in12k_wo_demo_val_preds.npy
+  weight_range:
+  - 0.0
+  - 1.0
+n_steps: 5
+output_dir: ensemble_results/wo_demo
+test_targets_path: ensemble_predictions/fold0_test_targets.npy
+val_targets_path: ensemble_predictions/fold0_val_targets.npy
+weighting: grid_search

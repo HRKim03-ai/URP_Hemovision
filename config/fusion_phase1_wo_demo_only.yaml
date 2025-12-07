@@ -1,0 +1,24 @@
+auto_start_phase2: false
+batch_size: 128
+checkpoint_dir: checkpoints/fusion_phase1
+conj_backbones:
+- timm/efficientnet_b5.sw_in12k
+- timm/convnext_small.in12k
+conj_checkpoint_dir: checkpoints/conj
+epochs: 60
+# Fusion metadata CSV path (프로젝트 루트 기준 상대 경로)
+fusion_metadata_csv: multimodal_dataset/fusion_meta.csv
+image_size: 224
+load_pretrained_backbones: true
+log_file: logs/fusion_phase1.log
+nail_backbones:
+- timm/convnext_small.in12k
+nail_checkpoint_dir: checkpoints/nail
+num_workers: 4
+phase2_config_path: config/fusion_phase2.yaml
+phase2_num_gpus: 4
+run_both_demo_versions: false
+seed: 42
+use_demographics: false
+warmup_epochs_head: 5
+weight_decay: 1e-4

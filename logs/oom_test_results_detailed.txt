@@ -1,0 +1,116 @@
+사용 가능한 GPU: 4개
+=== OOM 테스트 시작 ===
+총 조합 수: 75
+GPU 수: 4
+배치 사이즈: [64, 128, 256]
+
+
+============================================================
+배치 사이즈: 64
+============================================================
+[1/75] timm/convnext_base.clip_laion2b_augreg_ft_in12k + timm/convnext_base.clip_laion2b_augreg_ft_in12k (GPU 0, batch=64)... ✓ OK
+[2/75] timm/convnext_base.clip_laion2b_augreg_ft_in12k + timm/rexnetr_300.sw_in12k (GPU 1, batch=64)... ✓ OK
+[3/75] timm/convnext_base.clip_laion2b_augreg_ft_in12k + timm/regnety_120.sw_in12k (GPU 2, batch=64)... ✓ OK
+[4/75] timm/convnext_base.clip_laion2b_augreg_ft_in12k + timm/efficientnet_b5.sw_in12k (GPU 3, batch=64)... ✓ OK
+[5/75] timm/convnext_base.clip_laion2b_augreg_ft_in12k + timm/convnext_small.in12k (GPU 0, batch=64)... ✓ OK
+[6/75] timm/rexnetr_300.sw_in12k + timm/convnext_base.clip_laion2b_augreg_ft_in12k (GPU 1, batch=64)... ✓ OK
+[7/75] timm/rexnetr_300.sw_in12k + timm/rexnetr_300.sw_in12k (GPU 2, batch=64)... ✓ OK
+[8/75] timm/rexnetr_300.sw_in12k + timm/regnety_120.sw_in12k (GPU 3, batch=64)... ✓ OK
+[9/75] timm/rexnetr_300.sw_in12k + timm/efficientnet_b5.sw_in12k (GPU 0, batch=64)... ✓ OK
+[10/75] timm/rexnetr_300.sw_in12k + timm/convnext_small.in12k (GPU 1, batch=64)... ✓ OK
+[11/75] timm/regnety_120.sw_in12k + timm/convnext_base.clip_laion2b_augreg_ft_in12k (GPU 2, batch=64)... ✓ OK
+[12/75] timm/regnety_120.sw_in12k + timm/rexnetr_300.sw_in12k (GPU 3, batch=64)... ✓ OK
+[13/75] timm/regnety_120.sw_in12k + timm/regnety_120.sw_in12k (GPU 0, batch=64)... ✓ OK
+[14/75] timm/regnety_120.sw_in12k + timm/efficientnet_b5.sw_in12k (GPU 1, batch=64)... ✓ OK
+[15/75] timm/regnety_120.sw_in12k + timm/convnext_small.in12k (GPU 2, batch=64)... ✓ OK
+[16/75] timm/resnetaa101d.sw_in12k + timm/convnext_base.clip_laion2b_augreg_ft_in12k (GPU 3, batch=64)... ✓ OK
+[17/75] timm/resnetaa101d.sw_in12k + timm/rexnetr_300.sw_in12k (GPU 0, batch=64)... ✓ OK
+[18/75] timm/resnetaa101d.sw_in12k + timm/regnety_120.sw_in12k (GPU 1, batch=64)... ✓ OK
+[19/75] timm/resnetaa101d.sw_in12k + timm/efficientnet_b5.sw_in12k (GPU 2, batch=64)... ✓ OK
+[20/75] timm/resnetaa101d.sw_in12k + timm/convnext_small.in12k (GPU 3, batch=64)... ✓ OK
+[21/75] timm/convnext_small.in12k + timm/convnext_base.clip_laion2b_augreg_ft_in12k (GPU 0, batch=64)... ✓ OK
+[22/75] timm/convnext_small.in12k + timm/rexnetr_300.sw_in12k (GPU 1, batch=64)... ✓ OK
+[23/75] timm/convnext_small.in12k + timm/regnety_120.sw_in12k (GPU 2, batch=64)... ✓ OK
+[24/75] timm/convnext_small.in12k + timm/efficientnet_b5.sw_in12k (GPU 3, batch=64)... ✓ OK
+[25/75] timm/convnext_small.in12k + timm/convnext_small.in12k (GPU 0, batch=64)... ✓ OK
+
+============================================================
+배치 사이즈: 128
+============================================================
+[26/75] timm/convnext_base.clip_laion2b_augreg_ft_in12k + timm/convnext_base.clip_laion2b_augreg_ft_in12k (GPU 1, batch=128)... ✓ OK
+[27/75] timm/convnext_base.clip_laion2b_augreg_ft_in12k + timm/rexnetr_300.sw_in12k (GPU 2, batch=128)... ✓ OK
+[28/75] timm/convnext_base.clip_laion2b_augreg_ft_in12k + timm/regnety_120.sw_in12k (GPU 3, batch=128)... ✓ OK
+[29/75] timm/convnext_base.clip_laion2b_augreg_ft_in12k + timm/efficientnet_b5.sw_in12k (GPU 0, batch=128)... ✓ OK
+[30/75] timm/convnext_base.clip_laion2b_augreg_ft_in12k + timm/convnext_small.in12k (GPU 1, batch=128)... ✓ OK
+[31/75] timm/rexnetr_300.sw_in12k + timm/convnext_base.clip_laion2b_augreg_ft_in12k (GPU 2, batch=128)... ✓ OK
+[32/75] timm/rexnetr_300.sw_in12k + timm/rexnetr_300.sw_in12k (GPU 3, batch=128)... ✓ OK
+[33/75] timm/rexnetr_300.sw_in12k + timm/regnety_120.sw_in12k (GPU 0, batch=128)... ✓ OK
+[34/75] timm/rexnetr_300.sw_in12k + timm/efficientnet_b5.sw_in12k (GPU 1, batch=128)... ✓ OK
+[35/75] timm/rexnetr_300.sw_in12k + timm/convnext_small.in12k (GPU 2, batch=128)... ✓ OK
+[36/75] timm/regnety_120.sw_in12k + timm/convnext_base.clip_laion2b_augreg_ft_in12k (GPU 3, batch=128)... ✓ OK
+[37/75] timm/regnety_120.sw_in12k + timm/rexnetr_300.sw_in12k (GPU 0, batch=128)... ✓ OK
+[38/75] timm/regnety_120.sw_in12k + timm/regnety_120.sw_in12k (GPU 1, batch=128)... ✓ OK
+[39/75] timm/regnety_120.sw_in12k + timm/efficientnet_b5.sw_in12k (GPU 2, batch=128)... ✓ OK
+[40/75] timm/regnety_120.sw_in12k + timm/convnext_small.in12k (GPU 3, batch=128)... ✓ OK
+[41/75] timm/resnetaa101d.sw_in12k + timm/convnext_base.clip_laion2b_augreg_ft_in12k (GPU 0, batch=128)... ✓ OK
+[42/75] timm/resnetaa101d.sw_in12k + timm/rexnetr_300.sw_in12k (GPU 1, batch=128)... ✓ OK
+[43/75] timm/resnetaa101d.sw_in12k + timm/regnety_120.sw_in12k (GPU 2, batch=128)... ✓ OK
+[44/75] timm/resnetaa101d.sw_in12k + timm/efficientnet_b5.sw_in12k (GPU 3, batch=128)... ✓ OK
+[45/75] timm/resnetaa101d.sw_in12k + timm/convnext_small.in12k (GPU 0, batch=128)... ✓ OK
+[46/75] timm/convnext_small.in12k + timm/convnext_base.clip_laion2b_augreg_ft_in12k (GPU 1, batch=128)... ✓ OK
+[47/75] timm/convnext_small.in12k + timm/rexnetr_300.sw_in12k (GPU 2, batch=128)... ✓ OK
+[48/75] timm/convnext_small.in12k + timm/regnety_120.sw_in12k (GPU 3, batch=128)... ✓ OK
+[49/75] timm/convnext_small.in12k + timm/efficientnet_b5.sw_in12k (GPU 0, batch=128)... ✓ OK
+[50/75] timm/convnext_small.in12k + timm/convnext_small.in12k (GPU 1, batch=128)... ✓ OK
+
+============================================================
+배치 사이즈: 256
+============================================================
+[51/75] timm/convnext_base.clip_laion2b_augreg_ft_in12k + timm/convnext_base.clip_laion2b_augreg_ft_in12k (GPU 2, batch=256)... ✓ OK
+[52/75] timm/convnext_base.clip_laion2b_augreg_ft_in12k + timm/rexnetr_300.sw_in12k (GPU 3, batch=256)... ✗ OOM
+[53/75] timm/convnext_base.clip_laion2b_augreg_ft_in12k + timm/regnety_120.sw_in12k (GPU 0, batch=256)... ✓ OK
+[54/75] timm/convnext_base.clip_laion2b_augreg_ft_in12k + timm/efficientnet_b5.sw_in12k (GPU 1, batch=256)... ✓ OK
+[55/75] timm/convnext_base.clip_laion2b_augreg_ft_in12k + timm/convnext_small.in12k (GPU 2, batch=256)... ✓ OK
+[56/75] timm/rexnetr_300.sw_in12k + timm/convnext_base.clip_laion2b_augreg_ft_in12k (GPU 3, batch=256)... ✓ OK
+[57/75] timm/rexnetr_300.sw_in12k + timm/rexnetr_300.sw_in12k (GPU 0, batch=256)... ✗ OOM
+[58/75] timm/rexnetr_300.sw_in12k + timm/regnety_120.sw_in12k (GPU 1, batch=256)... ✓ OK
+[59/75] timm/rexnetr_300.sw_in12k + timm/efficientnet_b5.sw_in12k (GPU 2, batch=256)... ✓ OK
+[60/75] timm/rexnetr_300.sw_in12k + timm/convnext_small.in12k (GPU 3, batch=256)... ✓ OK
+[61/75] timm/regnety_120.sw_in12k + timm/convnext_base.clip_laion2b_augreg_ft_in12k (GPU 0, batch=256)... ✓ OK
+[62/75] timm/regnety_120.sw_in12k + timm/rexnetr_300.sw_in12k (GPU 1, batch=256)... ✗ OOM
+[63/75] timm/regnety_120.sw_in12k + timm/regnety_120.sw_in12k (GPU 2, batch=256)... ✓ OK
+[64/75] timm/regnety_120.sw_in12k + timm/efficientnet_b5.sw_in12k (GPU 3, batch=256)... ✓ OK
+[65/75] timm/regnety_120.sw_in12k + timm/convnext_small.in12k (GPU 0, batch=256)... ✓ OK
+[66/75] timm/resnetaa101d.sw_in12k + timm/convnext_base.clip_laion2b_augreg_ft_in12k (GPU 1, batch=256)... ✓ OK
+[67/75] timm/resnetaa101d.sw_in12k + timm/rexnetr_300.sw_in12k (GPU 2, batch=256)... ✓ OK
+[68/75] timm/resnetaa101d.sw_in12k + timm/regnety_120.sw_in12k (GPU 3, batch=256)... ✓ OK
+[69/75] timm/resnetaa101d.sw_in12k + timm/efficientnet_b5.sw_in12k (GPU 0, batch=256)... ✓ OK
+[70/75] timm/resnetaa101d.sw_in12k + timm/convnext_small.in12k (GPU 1, batch=256)... ✓ OK
+[71/75] timm/convnext_small.in12k + timm/convnext_base.clip_laion2b_augreg_ft_in12k (GPU 2, batch=256)... ✓ OK
+[72/75] timm/convnext_small.in12k + timm/rexnetr_300.sw_in12k (GPU 3, batch=256)... ✓ OK
+[73/75] timm/convnext_small.in12k + timm/regnety_120.sw_in12k (GPU 0, batch=256)... ✓ OK
+[74/75] timm/convnext_small.in12k + timm/efficientnet_b5.sw_in12k (GPU 1, batch=256)... ✓ OK
+[75/75] timm/convnext_small.in12k + timm/convnext_small.in12k (GPU 2, batch=256)... ✓ OK
+
+
+============================================================
+테스트 결과 요약
+============================================================
+
+배치 사이즈 64:
+  ✓ 성공: 25/25
+  ✗ OOM: 0/25
+
+배치 사이즈 128:
+  ✓ 성공: 25/25
+  ✗ OOM: 0/25
+
+배치 사이즈 256:
+  ✓ 성공: 22/25
+  ✗ OOM: 3/25
+  OOM 발생 조합:
+    - timm/convnext_base.clip_laion2b_augreg_ft_in12k + timm/rexnetr_300.sw_in12k
+    - timm/rexnetr_300.sw_in12k + timm/rexnetr_300.sw_in12k
+    - timm/regnety_120.sw_in12k + timm/rexnetr_300.sw_in12k
+
+상세 결과가 저장되었습니다: /home/monetai/Desktop/URP(학룡)/logs/oom_test_results.txt

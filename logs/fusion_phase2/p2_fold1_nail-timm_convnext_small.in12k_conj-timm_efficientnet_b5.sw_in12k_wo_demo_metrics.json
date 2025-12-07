@@ -1,0 +1,16 @@
+{
+  "pretrained_source": "Phase1_Fusion",
+  "best_metrics": [
+    {
+      "epoch": 46,
+      "metrics": {
+        "mae": 1.154296636581421,
+        "r2": 0.0216282430483814,
+        "acc@0.5": 0.3,
+        "acc@1.0": 0.5,
+        "acc@2.0": 0.8,
+        "train_loss": 0.46740711107850075
+      }
+    }
+  ]
+}

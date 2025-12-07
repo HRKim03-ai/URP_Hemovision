@@ -1,0 +1,96 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# PyTorch
+*.pth
+*.pt
+!checkpoints/**/*.pt  # Keep checkpoint files but ignore other .pt files
+
+# Data and Datasets (keep structure but ignore actual data)
+multimodal_dataset/*.jpeg
+multimodal_dataset/*.jpg
+multimodal_dataset/*.png
+multimodal_dataset/left_eye/
+multimodal_dataset/right_eye/
+multimodal_dataset/left_nail/
+multimodal_dataset/right_nail/
+singlemodal_dataset/conj/
+singlemodal_dataset/nail/
+singlemodal_dataset/*.png
+
+# Logs (exclude log files but keep result CSV and metrics JSON files)
+# Exclude .log files everywhere
+*.log
+nohup.out
+# Exclude log files in logs/ directory specifically
+logs/**/*.log
+logs/**/nohup.out
+# Note: logs/ directory itself is included, so result CSV and metrics JSON files will be tracked
+
+# Checkpoints (keep directory structure but ignore large files)
+# Note: 체크포인트는 GitHub에 올리지 않지만, 디렉토리 구조는 유지
+checkpoints/**/*.pt
+checkpoints/**/*.pth
+!checkpoints/.gitkeep
+
+# Results and Predictions
+ensemble_predictions/
+# Exclude prediction files but keep metrics JSON
+ensemble_results/**/*.npy
+ensemble_results/**/*.npz
+# Note: ensemble_results/ directory itself is included, so metrics.json files will be tracked
+
+# Temporary files
+*.tmp
+*.bak
+*.cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Project specific
+*.csv.bak
+visualizations/*.png
+visualizations/*.jpg
+

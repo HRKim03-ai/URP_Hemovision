@@ -1,0 +1,56 @@
+seed: 42
+log_file: logs/fusion_phase1.log
+
+# Fusion metadata CSV path (프로젝트 루트 기준 상대 경로)
+fusion_metadata_csv: multimodal_dataset/fusion_meta.csv
+
+# Nail backbone names
+# Phase 2에서 필요한 조합만 학습하기 위해 convnext_small만 사용
+nail_backbones:
+  - timm/convnext_small.in12k
+
+# Conj backbone names
+# Phase 2에서 필요한 조합만 학습하기 위해 efficientnet_b5, convnext_small만 사용
+conj_backbones:
+  - timm/efficientnet_b5.sw_in12k
+  - timm/convnext_small.in12k
+
+# Checkpoint directories for loading pretrained backbones
+nail_checkpoint_dir: checkpoints/nail
+conj_checkpoint_dir: checkpoints/conj
+
+# Whether to load pretrained backbones from single-modality checkpoints
+load_pretrained_backbones: true
+
+# Whether to use demographic features (age_z, gender_binary) in fusion
+# Set to false to train without demographic features for comparison
+use_demographics: true
+
+# If true, will run both versions (with and without demographics) sequentially
+# This allows direct comparison of demographic feature contribution
+run_both_demo_versions: true
+
+image_size: 224
+batch_size: 128  # Default batch size. rexnetr_300 포함 조합은 자동으로 64로 낮춰짐 (OOM 방지). Train/Val still 1 step due to small dataset.
+num_workers: 4
+
+# Phase 1 training settings
+epochs: 60
+warmup_epochs_head: 5  # Epoch 0-5: LR_head warmup
+
+weight_decay: 1e-4
+
+checkpoint_dir: checkpoints/fusion_phase1
+
+# Phase 1 완료 후 Phase 2 자동 시작 옵션
+# true: Phase 1 완료 후 자동으로 Phase 2 시작
+# false: Phase 1만 실행하고 종료
+auto_start_phase2: false  # wo_demo만 실행하므로 Phase 2는 수동으로 실행
+
+# Phase 2 config 파일 경로 (auto_start_phase2가 true일 때 사용)
+phase2_config_path: config/fusion_phase2.yaml
+
+# Phase 2 실행 시 사용할 GPU 개수 (auto_start_phase2가 true일 때 사용)
+# 지정하지 않으면 Phase 1과 동일한 GPU 개수 사용
+phase2_num_gpus: 4
+

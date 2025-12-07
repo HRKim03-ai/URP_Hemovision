@@ -1,0 +1,84 @@
+================================================================================
+Fusion Phase 1 Training Log Summary
+================================================================================
+
+시작 정보:
+  - 시작 시간: 2025-12-04 06:17:07
+  - 4개 GPU 사용 (GPU 0, 1, 2, 3)
+  - Demographic features 사용 (w_demo)
+  - 배치 사이즈: 256
+
+================================================================================
+OOM 에러 발생: 8건
+================================================================================
+
+고유 조합: 4개
+
+  - nail: convnext_base.clip_laion2b_augreg_ft_in12k
+    conj: convnext_base.clip_laion2b_augreg_ft_in12k
+
+  - nail: convnext_small.in12k
+    conj: convnext_base.clip_laion2b_augreg_ft_in12k
+
+  - nail: regnety_120.sw_in12k
+    conj: efficientnet_b5.sw_in12k
+
+  - nail: resnetaa101d.sw_in12k
+    conj: convnext_base.clip_laion2b_augreg_ft_in12k
+
+상세 OOM 정보:
+
+OOM #1 (Line 475):
+  GPU: 1
+  메모리: 176.00 MiB
+  조합: nail=regnety_120.sw_in12k, conj=efficientnet_b5.sw_in12k
+
+OOM #2 (Line 2167):
+  GPU: 0
+  메모리: 138.00 MiB
+  조합: nail=convnext_small.in12k, conj=convnext_base.clip_laion2b_augreg_ft_in12k
+
+OOM #3 (Line 3319):
+  GPU: 3
+  메모리: 580.00 MiB
+  조합: nail=resnetaa101d.sw_in12k, conj=convnext_base.clip_laion2b_augreg_ft_in12k
+
+OOM #4 (Line 3973):
+  GPU: 2
+  메모리: 580.00 MiB
+
+OOM #5 (Line 4456):
+  GPU: 1
+  메모리: 176.00 MiB
+  조합: nail=convnext_base.clip_laion2b_augreg_ft_in12k, conj=convnext_base.clip_laion2b_augreg_ft_in12k
+
+OOM #6 (Line 6149):
+  GPU: 0
+  메모리: 138.00 MiB
+  조합: nail=convnext_small.in12k, conj=convnext_base.clip_laion2b_augreg_ft_in12k
+
+OOM #7 (Line 7291):
+  GPU: 3
+  메모리: 580.00 MiB
+  조합: nail=resnetaa101d.sw_in12k, conj=convnext_base.clip_laion2b_augreg_ft_in12k
+
+OOM #8 (Line 7946):
+  GPU: 2
+  메모리: 580.00 MiB
+
+================================================================================
+결론 및 해결책
+================================================================================
+문제: 배치 사이즈 256 사용 시 일부 큰 모델 조합에서 OOM 발생 (8건)
+  - OOM 테스트 결과: 배치 256에서 3개 조합에서 OOM 발생
+    * convnext_base + rexnetr_300
+    * rexnetr_300 + rexnetr_300  
+    * regnety_120 + rexnetr_300
+
+해결책: 배치 사이즈를 128로 낮춤
+  - 데이터셋 크기상 배치 128로도 Train/Val 모두 1 step (성능 저하 없음)
+  - OOM 테스트 결과: 배치 128에서 모든 조합 통과 (25/25)
+  - 모든 조합에서 안정적으로 실행 가능
+
+총 로그 라인 수: 7946
+OOM 테스트 결과: logs/oom_test_results_detailed.txt 참조

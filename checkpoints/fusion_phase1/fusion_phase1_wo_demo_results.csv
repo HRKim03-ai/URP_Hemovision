@@ -1,0 +1,11 @@
+Fold,Nail Model,Conj Model,Pair,MAE,R²,Acc@0.5,Acc@1.0,Acc@2.0,Best Epoch
+2,convnext_small.in12k,efficientnet_b5.sw_in12k,convnext_small.in12k + efficientnet_b5.sw_in12k,0.21692109107971191,-0.04886899146603452,0.9375,1.0,1.0,30
+2,convnext_small.in12k,convnext_small.in12k,convnext_small.in12k + convnext_small.in12k,0.3343048095703125,-1.8980000013757579,0.75,0.9375,1.0,26
+4,convnext_small.in12k,convnext_small.in12k,convnext_small.in12k + convnext_small.in12k,0.6567685604095459,0.5195041674600629,0.625,0.6875,1.0,38
+3,convnext_small.in12k,efficientnet_b5.sw_in12k,convnext_small.in12k + efficientnet_b5.sw_in12k,0.7017706632614136,-0.3162217595442145,0.6875,0.75,0.75,27
+3,convnext_small.in12k,convnext_small.in12k,convnext_small.in12k + convnext_small.in12k,0.7627303600311279,-0.17033359809061,0.625,0.6875,1.0,13
+4,convnext_small.in12k,efficientnet_b5.sw_in12k,convnext_small.in12k + efficientnet_b5.sw_in12k,0.7793005108833313,0.3433904836996341,0.5,0.625,1.0,36
+0,convnext_small.in12k,convnext_small.in12k,convnext_small.in12k + convnext_small.in12k,1.1241475343704224,-0.0088896840141377,0.3,0.4,0.8,22
+1,convnext_small.in12k,convnext_small.in12k,convnext_small.in12k + convnext_small.in12k,1.231222152709961,-0.20135096882578463,0.4,0.45,0.8,25
+0,convnext_small.in12k,efficientnet_b5.sw_in12k,convnext_small.in12k + efficientnet_b5.sw_in12k,1.2646756172180176,-0.3104636411984829,0.2,0.4,0.8,7
+1,convnext_small.in12k,efficientnet_b5.sw_in12k,convnext_small.in12k + efficientnet_b5.sw_in12k,1.3255469799041748,-0.21148275578624887,0.3,0.45,0.8,42

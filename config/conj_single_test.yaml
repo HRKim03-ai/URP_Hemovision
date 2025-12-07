@@ -1,0 +1,38 @@
+seed: 42
+log_file: logs/conj_single_test.log
+
+# 테스트 런에서도 동일한 13개 backbone 사용 (1 epoch만)
+backbone_names:
+  - timm/convnext_base.clip_laion2b_augreg_ft_in12k
+  - timm/rexnetr_300.sw_in12k
+  - timm/regnety_120.sw_in12k
+  - timm/resnetaa101d.sw_in12k
+  - timm/convnext_small.in12k
+  - timm/efficientnet_b5.sw_in12k
+  - timm/resnetaa50d.sw_in12k
+  - timm/resnetaa50d.d_in12k
+  - timm/rexnetr_200.sw_in12k
+  - timm/convnext_tiny.in12k
+  - timm/coatnet_2_rw_224.sw_in12k
+  - timm/coatnet_rmlp_2_rw_224.sw_in12k
+  - timm/coatnet_rmlp_1_rw2_224.sw_in12k
+
+backbone_name: timm/convnext_tiny.in12k
+
+# 경로는 프로젝트 루트 기준 상대 경로로 설정
+metadata_csv_folder1: singlemodal_dataset/conj_folder1.csv
+metadata_csv_folder2: singlemodal_dataset/conj_folder2.csv
+
+image_size: 224
+batch_size: 16  # OOM 방지를 위해 보수적으로
+num_workers: 4
+
+epochs: 1
+warmup_epochs: 1
+
+weight_decay: 1e-4
+
+checkpoint_dir: checkpoints/conj_test
+top_k_models: 1
+
+

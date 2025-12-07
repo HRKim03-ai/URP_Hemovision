@@ -1,0 +1,13 @@
+fold,nail_backbone,conj_backbone,best_epoch,mae,r2,acc@0.5,acc@1.0,acc@2.0,train_loss
+0,timm_convnext_base.clip_laion2b_augreg_ft_in12k,timm_convnext_base.clip_laion2b_augreg_ft_in12k,5,0.728107213973999,0.5388704758553357,0.4,0.65,1.0,2.180841159820557
+0,timm_convnext_base.clip_laion2b_augreg_ft_in12k,timm_convnext_small.in12k,8,0.8193095922470093,0.3123790472157105,0.5,0.6,0.9,1.0312463402748109
+0,timm_convnext_base.clip_laion2b_augreg_ft_in12k,timm_efficientnet_b5.sw_in12k,17,1.0435556173324585,0.2466138330662473,0.1,0.6,1.0,1.2573713183403015
+0,timm_convnext_base.clip_laion2b_augreg_ft_in12k,timm_rexnetr_300.sw_in12k,17,1.0293830633163452,0.1879700531793299,0.35,0.45,0.95,1.2623454809188843
+0,timm_convnext_small.in12k,timm_convnext_base.clip_laion2b_augreg_ft_in12k,11,0.797228217124939,0.4621158521458013,0.35,0.7,1.0,1.2281301736831665
+0,timm_convnext_small.in12k,timm_convnext_small.in12k,12,0.8240745663642883,0.40633665949657016,0.3,0.7,0.95,1.5624412059783936
+1,timm_convnext_small.in12k,timm_convnext_small.in12k,33,1.098533272743225,0.008773541051825817,0.4,0.6,0.8,0.735886174440384
+0,timm_convnext_small.in12k,timm_efficientnet_b5.sw_in12k,34,0.9188602566719055,0.323924802820414,0.35,0.45,1.0,0.670799720287323
+0,timm_convnext_small.in12k,timm_rexnetr_300.sw_in12k,16,1.0545525550842285,0.07715709415398486,0.4,0.4,0.9,1.3074255228042602
+1,timm_regnety_120.sw_in12k,timm_convnext_base.clip_laion2b_augreg_ft_in12k,8,1.2493605613708496,0.030505422906015545,0.2,0.4,0.8,1.065536630153656
+4,timm_regnety_120.sw_in12k,timm_rexnetr_300.sw_in12k,33,0.7338954210281372,0.22884526492800117,0.5625,0.75,0.875,0.7172932028770447
+1,timm_resnetaa101d.sw_in12k,timm_convnext_base.clip_laion2b_augreg_ft_in12k,6,1.1283625364303589,0.05642776454954512,0.4,0.5,0.8,1.817651104927063

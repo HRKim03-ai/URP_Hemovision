@@ -1,0 +1,38 @@
+seed: 42
+# log_file은 선택사항 (지정하지 않으면 logs/fusion_phase2/fusion_phase2.log로 자동 설정됨)
+# log_file: logs/fusion_phase2/fusion_phase2_test.log
+
+# Fusion metadata CSV path (프로젝트 루트 기준 상대 경로)
+fusion_metadata_csv: multimodal_dataset/fusion_meta.csv
+
+# Nail backbone names (test용으로 1개만 - 가장 작은 모델 선택)
+nail_backbones:
+  - timm/convnext_small.in12k
+
+# Conj backbone names (test용으로 1개만 - 가장 작은 모델 선택)
+conj_backbones:
+  - timm/convnext_small.in12k
+
+# Checkpoint directories for loading pretrained backbones from phase 1
+nail_checkpoint_dir: checkpoints/nail
+conj_checkpoint_dir: checkpoints/conj
+
+# Whether to load pretrained backbones from single-modality checkpoints
+load_pretrained_backbones: true
+
+image_size: 224
+batch_size: 16  # 메모리 체크를 위해 원래 batch_size 유지
+num_workers: 4
+
+# Phase 2 training settings - TEST: 1 epoch only
+epochs: 1
+warmup_epochs: 1  # epochs가 1이므로 warmup도 1로 설정
+
+weight_decay: 1e-4
+
+# checkpoint_dir은 선택사항 (지정하지 않으면 logs/fusion_phase2로 자동 설정됨)
+# checkpoint_dir: logs/fusion_phase2
+
+
+
+

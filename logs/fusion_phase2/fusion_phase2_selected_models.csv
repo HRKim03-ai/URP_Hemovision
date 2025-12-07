@@ -1,0 +1,5 @@
+version,selection_criteria,fold,nail_backbone,conj_backbone,best_epoch,mae,r2,acc@0.5,acc@1.0,acc@2.0
+w_demo,MAE 최소,3,timm_convnext_small.in12k,timm_efficientnet_b5.sw_in12k,5,0.6550782918930054,0.05908410276183251,0.5625,0.75,0.875
+w_demo,R² 최대,4,timm_convnext_small.in12k,timm_convnext_small.in12k,39,0.7217773199081421,0.47770138985578103,0.5,0.625,1.0
+wo_demo,MAE 최소,0,timm_convnext_small.in12k,timm_convnext_small.in12k,8,0.812578022480011,0.41055885236170564,0.35,0.75,0.95
+wo_demo,R² 최대,0,timm_convnext_small.in12k,timm_convnext_small.in12k,8,0.812578022480011,0.41055885236170564,0.35,0.75,0.95

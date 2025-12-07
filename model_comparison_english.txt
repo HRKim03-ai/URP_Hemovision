@@ -1,0 +1,192 @@
+
+================================================================================
+Fusion Phase 1 Model Selection: w_demo vs wo_demo Objective Comparison
+================================================================================
+
+This document provides an objective comparative analysis of two model versions 
+based on Fusion Phase 1 experimental results. Please use this as a reference 
+for model selection.
+
+--------------------------------------------------------------------------------
+1. Experiment Overview
+--------------------------------------------------------------------------------
+
+- w_demo: Model with demographic features (age, gender)
+- wo_demo: Model without demographic features
+- Evaluation metrics: MAE, R², Acc@0.5, Acc@1.0, Acc@2.0
+- Comparison criterion: Best model is selected as the one with minimum MAE 
+  among models with R² > 0
+
+--------------------------------------------------------------------------------
+2. Best Model Comparison
+--------------------------------------------------------------------------------
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                    Best Model (R² > 0 && Minimum MAE)                      │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+w_demo (with demographic features):
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ Fold: 2                                                      │
+  │ Model Pair: convnext_small.in12k + efficientnet_b5.sw_in12k             │
+  │                                                                         │
+  │ MAE:  0.2023                                                │
+  │ R²:   0.0268                                                 │
+  │ Acc@0.5: 1.0000                                            │
+  │ Acc@1.0: 1.0000                                            │
+  │ Acc@2.0: 1.0000                                            │
+  └─────────────────────────────────────────────────────────────────────────┘
+
+wo_demo (without demographic features):
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │ Fold: 2                                                      │
+  │ Model Pair: convnext_small.in12k + efficientnet_b5.sw_in12k             │
+  │                                                                         │
+  │ MAE:  0.2048                                                │
+  │ R²:   0.0904                                                 │
+  │ Acc@0.5: 0.9375                                            │
+  │ Acc@1.0: 1.0000                                            │
+  │ Acc@2.0: 1.0000                                            │
+  └─────────────────────────────────────────────────────────────────────────┘
+
+Numerical Comparison:
+  ┌──────────────┬──────────────┬──────────────┬──────────────┐
+  │   Metric     │    w_demo    │    wo_demo   │  Difference  │
+  ├──────────────┼──────────────┼──────────────┼──────────────┤
+  │ MAE          │  0.2023    │  0.2048    │  0.0025    │
+  │              │              │              │ (w_demo lower)│
+  ├──────────────┼──────────────┼──────────────┼──────────────┤
+  │ R²           │  0.0268    │  0.0904    │  0.0636    │
+  │              │              │              │ (wo_demo higher)│
+  ├──────────────┼──────────────┼──────────────┼──────────────┤
+  │ Acc@0.5      │  1.0000    │  0.9375    │  0.0625    │
+  │              │              │              │ (w_demo higher)│
+  ├──────────────┼──────────────┼──────────────┼──────────────┤
+  │ Acc@1.0      │  1.0000    │  1.0000    │  0.0000    │
+  │              │              │              │ (equal)      │
+  ├──────────────┼──────────────┼──────────────┼──────────────┤
+  │ Acc@2.0      │  1.0000    │  1.0000    │  0.0000    │
+  │              │              │              │ (equal)      │
+  └──────────────┴──────────────┴──────────────┴──────────────┘
+
+Key Observations:
+  • MAE: w_demo is 0.0025 lower (approximately 1.22% improvement)
+  • R²: wo_demo is 0.0636 higher (approximately 3.4x)
+  • Acc@0.5: w_demo achieves perfect score (1.0000), wo_demo is 0.9375
+
+--------------------------------------------------------------------------------
+3. Overall Model Statistics Comparison (Models with R² > 0)
+--------------------------------------------------------------------------------
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                      Average Performance Metrics Comparison                 │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────┬──────────────┬──────────────┬──────────────┬──────────────┐
+│   Metric     │    w_demo    │    wo_demo   │  Difference  │   Advantage  │
+├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+│ Mean MAE     │  0.8551    │  0.8365    │  0.0186    │  wo_demo     │
+│              │              │              │              │ (2.17% lower)│
+├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+│ Mean R²      │  0.1597    │  0.1801    │  0.0204    │  wo_demo     │
+│              │              │              │              │ (12.77% higher)│
+├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+│ Mean Acc@0.5 │  0.4562    │  0.4763    │  0.0201    │  wo_demo     │
+│              │              │              │              │ (4.40% higher)│
+├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+│ Mean Acc@1.0 │  0.6438    │  0.6243    │  0.0194    │  w_demo      │
+│              │              │              │              │ (3.11% higher)│
+├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+│ Mean Acc@2.0 │  0.9113    │  0.9072    │  0.0040    │  w_demo      │
+│              │              │              │              │ (0.44% higher)│
+└──────────────┴──────────────┴──────────────┴──────────────┴──────────────┘
+
+Number of Models:
+  • w_demo: 20 models with R² > 0
+  • wo_demo: 19 models with R² > 0
+
+--------------------------------------------------------------------------------
+4. Detailed Comparative Analysis
+--------------------------------------------------------------------------------
+
+4.1 Characteristics of w_demo (with demographic features)
+
+Advantages:
+  ✓ Lower MAE in best model (0.2023 vs 0.2048)
+  ✓ Perfect Acc@0.5 in best model (1.0000 vs 0.9375)
+  ✓ All accuracy metrics are perfect in best model
+  ✓ Higher mean Acc@1.0 and Acc@2.0
+  ✓ More models with R² > 0 (20 vs 19)
+
+Disadvantages:
+  ✗ Lower mean R² (0.1597 vs 0.1801)
+  ✗ Higher mean MAE (0.8551 vs 0.8365)
+  ✗ Significantly lower R² in best model (0.0268 vs 0.0904, approximately 3.4x difference)
+  ✗ Requires demographic data (age, gender) collection for deployment
+  ✗ Privacy concerns need to be considered
+
+4.2 Characteristics of wo_demo (without demographic features)
+
+Advantages:
+  ✓ Higher mean R² (0.1801 vs 0.1597) - better model explanation
+  ✓ Lower mean MAE (0.8365 vs 0.8551) - lower average error
+  ✓ Much higher R² in best model (0.0904 vs 0.0268, approximately 3.4x)
+  ✓ No need for demographic data collection - practical for deployment
+  ✓ No privacy concerns
+
+Disadvantages:
+  ✗ Slightly higher MAE in best model (0.2048 vs 0.2023)
+  ✗ Not perfect Acc@0.5 in best model (0.9375 vs 1.0000)
+  ✗ Slightly lower mean Acc@1.0 and Acc@2.0
+
+--------------------------------------------------------------------------------
+5. Selection Criteria Guide
+--------------------------------------------------------------------------------
+
+Consider w_demo in the following situations:
+
+  [ ] Perfect accuracy is critical (Acc@0.5 = 1.0 is essential)
+  [ ] Best model performance is more important than average
+  [ ] MAE must be minimized
+  [ ] Demographic data collection is feasible
+  [ ] Privacy concerns are not an issue
+  [ ] All accuracy metrics must be perfect
+
+Consider wo_demo in the following situations:
+
+  [ ] Model explanation (R²) is important
+  [ ] Average performance is important
+  [ ] Practical deployment is important (difficult demographic data collection)
+  [ ] Privacy regulations are strict
+  [ ] Deployment simplification is needed
+  [ ] Model generalization is important
+
+--------------------------------------------------------------------------------
+6. Additional Considerations
+--------------------------------------------------------------------------------
+
+Research Purpose:
+  • If model explanation (R²) is important for paper writing → wo_demo
+  • If best performance needs to be emphasized → w_demo
+
+Practicality:
+  • If demographic data collection is difficult in deployment → wo_demo
+  • If demographic data collection is feasible → w_demo
+
+Accuracy Requirements:
+  • If Acc@0.5 = 1.0 is essential → w_demo
+  • If slight error is acceptable → wo_demo
+
+--------------------------------------------------------------------------------
+7. Conclusion and Questions
+--------------------------------------------------------------------------------
+
+Both models have advantages and disadvantages, and the choice depends on 
+research purpose and practical requirements.
+
+Questions:
+  1. Which model would you like to select? (w_demo / wo_demo)
+  2. What is your reason for the selection?
+  3. Are there any additional considerations?
+
+================================================================================

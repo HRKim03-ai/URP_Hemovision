@@ -1,0 +1,52 @@
+seed: 42
+# log_file은 선택사항 (지정하지 않으면 logs/fusion_phase2/fusion_phase2.log로 자동 설정됨)
+# log_file: logs/fusion_phase2/fusion_phase2.log
+
+# Fusion metadata CSV path (프로젝트 루트 기준 상대 경로)
+fusion_metadata_csv: multimodal_dataset/fusion_meta.csv
+
+# Nail backbone names
+# Phase 1에서 학습한 조합만 사용
+nail_backbones:
+  - timm/convnext_small.in12k
+
+# Conj backbone names
+# Phase 1에서 학습한 조합만 사용
+conj_backbones:
+  - timm/efficientnet_b5.sw_in12k
+  - timm/convnext_small.in12k
+
+# Checkpoint directory for loading Phase 1 Fusion checkpoints
+# Phase 2는 Phase 1 Fusion의 best model에서 backbone을 추출하여 사용
+# with demo 버전은 Phase 1 Fusion의 w_demo 체크포인트 사용
+# without demo 버전은 Phase 1 Fusion의 wo_demo 체크포인트 사용
+phase1_checkpoint_dir: checkpoints/fusion_phase1
+
+# Whether to load pretrained backbones from Phase 1 Fusion checkpoints
+load_pretrained_backbones: true
+
+# If true, skip combinations that don't have Phase 1 Fusion checkpoints
+# If false, use ImageNet pretrained backbones when Phase 1 checkpoint is not found
+skip_if_no_phase1_checkpoint: false
+
+# Whether to use demographic features (age_z, gender_binary) in fusion
+# Set to false to train without demographic features for comparison
+use_demographics: true  # run_both_demo_versions가 true면 무시됨
+
+# If true, will run both versions (with and without demographics) sequentially
+# This allows direct comparison of demographic feature contribution
+run_both_demo_versions: true
+
+image_size: 224
+batch_size: 16  # Phase 2는 multi-level features를 사용하므로 메모리 사용량이 더 큼 (메모리 여유로 8→16으로 복원)
+num_workers: 2  # 메모리 여유로 1→2로 복원
+
+# Phase 2 training settings
+epochs: 80
+warmup_epochs: 10  # Epoch 0-10: LR_head warmup
+
+weight_decay: 1e-4
+
+# checkpoint_dir은 선택사항 (지정하지 않으면 logs/fusion_phase2로 자동 설정됨)
+# checkpoint_dir: logs/fusion_phase2
+
